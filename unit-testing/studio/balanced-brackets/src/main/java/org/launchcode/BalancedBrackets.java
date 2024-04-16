@@ -22,12 +22,16 @@ public class BalancedBrackets {
     public static boolean hasBalancedBrackets(String str) {
         int brackets = 0;
         for (char ch : str.toCharArray()) {
-            if (ch == '[') {
-                brackets++;
-            } else if (ch == ']') {
-                brackets--;
-            }
+                if (ch == '[') {
+                    brackets++;
+                } else if (ch == ']') {
+                    brackets--;
+                }
+            if (brackets < 0) {
+            return false;}
         }
         return brackets == 0;
+
+        //edit code so that "]launchcode[" will fail... right now the math works out so it passes
     }
 }
